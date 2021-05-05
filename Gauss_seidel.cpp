@@ -4,11 +4,18 @@
 using namespace std;
 int main(void) {
    //numero de casas decimais
-   cout<< setprecision(5)<< fixed;
+   int precisao;
+   printf("Entre com a precisao de casas decimais: ");
+   scanf("%d",&precisao);
+   cout<<setprecision(precisao)<< fixed;
    
    float a[10][10], b[10], m[10], n[10];
    int p = 0, q = 0, i = 0, j = 0;
-   cout << "Entre com o tamanho da matriz : ";
+   float *b1,*m1;
+   b1 = b;
+   m1 = m;
+
+   cout << "\nEntre com o tamanho da matriz : ";
    cin >> p;
    for (i = 0; i < p; i++) {
       for (j = 0; j < p; j++) {
@@ -18,13 +25,14 @@ int main(void) {
    }
    cout << "\nEntre com os termos independentes\n";
    for (i = 0; i < p; i++) {
-      cout << "b[" << i << ", " << j << " ]=";
-      cin >> b[i];
+      printf("\n[%d]:",i+1);
+      scanf("%f",&b1[i]);
    }
    cout << "Entre com os valores iniciais de x\n";
    for (i = 0; i < p; i++) {
-      cout << "x:[" << i<<"]=";
-      cin >> m[i];
+      printf("\n[%d]:",i+1);
+      scanf("%f",&m1[i]);
+                   
    }
    cout << "\nEntre com o numero de iteracoes : ";
    cin >> q;
